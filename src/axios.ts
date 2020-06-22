@@ -5,7 +5,7 @@ import { AxiosInstance } from './types'
 function createInstance(): AxiosInstance {
   const context = new Axios()
   const instance = Axios.prototype.request.bind(context)
-  extend(instance, Axios.prototype)
+  extend(instance, context)
   return instance as AxiosInstance
 }
 
