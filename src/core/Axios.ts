@@ -97,7 +97,7 @@ export default class Axios {
   }
 
   _requestMethodWithoutData(method: Method, url: string, config?: AxiosRequestConfig) {
-    this.request(
+    return this.request(
       Object.assign(config || {}, {
         url,
         method
@@ -106,7 +106,7 @@ export default class Axios {
   }
 
   _requestMethodWithData(method: Method, url: string, config?: AxiosRequestConfig, data?: any) {
-    this.request(
+    return this.request(
       Object.assign(config || {}, {
         url,
         method,
