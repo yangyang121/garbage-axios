@@ -23,15 +23,13 @@ export function processHeaders(headers: any, data: any) {
 
 export function parseHeaders(headers: string) {
   const parsed = Object.create(null)
-  if (!headers) return
+  if (!headers) return parsed
   headers.split('\r\n').forEach(line => {
-    let [key, value] = line.split(':')
+    let [key, ...vals] = line.split(':')
     key = key.trim().toLowerCase()
-    if (value) {
-      value = value.trim()
-    }
-    if (!key || !value) return
-    parsed[key] = value
+    if (!key) return
+    const val = vals.join(':').trim()
+    parsed[key] = val
   })
   return parsed
 }
