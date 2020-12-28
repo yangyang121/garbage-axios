@@ -1,7 +1,6 @@
-import { AxiosResponse, AxiosRequestConfig } from './types'
+import { AxiosRequestConfig } from './types'
 import { processHeaders } from './helpers/headers'
 import { transformRequest, transformResponse } from './helpers/data'
-import { stat } from 'fs'
 
 const defaults: AxiosRequestConfig = {
   method: 'get',
